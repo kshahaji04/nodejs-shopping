@@ -31,8 +31,8 @@ pipeline {
                     sh "sed -i 's|image: nodejs-shopping|image: nodejs-shopping:${BUILD_NUMBER}|' /var/lib/jenkins/workspace/Test4-G/deployment.yaml"
         
                     // Apply both Deployment and Service configurations to Minikube
-                    sh 'kubectl apply -f nodejs-shopping/deployment.yaml'
-                    sh 'kubectl apply -f nodejs-shopping/service.yaml'
+                    sh 'kubectl apply -f /var/lib/jenkins/workspace/Test4-G/deployment.yaml'
+                    sh 'kubectl apply -f /var/lib/jenkins/workspace/Test4-G/service.yaml'
 
                     // Verify deployment status
                     sh 'kubectl get pods'
