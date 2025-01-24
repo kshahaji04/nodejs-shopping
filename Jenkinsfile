@@ -3,7 +3,7 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'nodejs-shopping'  // Base name of the Docker image
         IMAGE_TAG = "nodejs-shopping:${BUILD_NUMBER}"  // Tag using Jenkins build number
-        KUBECONFIG = '/var/lib/jenkins/.kube/config'  // Path to Minikube config
+        KUBECONFIG = '/var/lib/jenkins/.kube/config'  // Path to Minikube config 
     }
     stages {
         stage('Clone Repository from GitHub') {
