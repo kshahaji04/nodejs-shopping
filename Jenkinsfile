@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     // Update deployment.yaml to use the new image tag
-                    sh "sed -i 's|image: nodejs-shopping|image: nodejs-shopping:${BUILD_NUMBER}|' nodejs-shopping/deployment.yaml"
+                    sh "sed -i 's|image: nodejs-shopping|image: nodejs-shopping:${BUILD_NUMBER}|' /var/lib/jenkins/workspace/Test4-G/deployment.yaml"
         
                     // Apply both Deployment and Service configurations to Minikube
                     sh 'kubectl apply -f nodejs-shopping/deployment.yaml'
